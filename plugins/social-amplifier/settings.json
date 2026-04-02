@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(champions/**)",
+      "Read(skills/**)",
+      "Read(agents/**)",
+      "Read(shared/**)",
+      "Read(CLAUDE.md)",
+      "Read(.claude/social-amplifier/**)",
+      "Edit(.claude/social-amplifier/**)",
+      "Write(.claude/social-amplifier/**)",
+      "Write(champions/**)",
+      "Bash(mkdir -p .claude/social-amplifier)",
+      "Bash(mkdir -p champions/*)",
+      "Bash(git status)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)"
+    ],
+    "deny": [
+      "Bash(rm -rf *)",
+      "Bash(git push --force*)",
+      "Bash(git reset --hard*)"
+    ]
+  },
+  "env": {
+    "SOCIAL_AMPLIFIER_VERSION": "0.1.0",
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  }
+}

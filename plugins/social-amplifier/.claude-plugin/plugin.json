@@ -1,0 +1,22 @@
+{
+  "name": "social-amplifier",
+  "version": "0.1.0",
+  "description": "Personal social content creation for Base44 employees. Onboards champions with tone-of-voice profiling, generates LinkedIn and X posts with 2-3 variations, and runs Voice Guardian quality gate.",
+  "author": {
+    "name": "Base44 Team",
+    "url": "https://github.com/blutrich"
+  },
+  "homepage": "https://github.com/blutrich/Social-Amplifier-agent",
+  "repository": "https://github.com/blutrich/Social-Amplifier-agent",
+  "license": "MIT",
+  "keywords": [
+    "social-media",
+    "content-creation",
+    "personal-voice",
+    "linkedin",
+    "twitter",
+    "x",
+    "champions",
+    "base44"
+  ]
+}
