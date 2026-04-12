@@ -21,8 +21,11 @@ The `champion-router` skill is the entry point. When loaded:
 | Scan trends | `champion-router` > `trend-scout` |
 | Scan Slack | `champion-router` > `scan-slack` skill |
 | Repurpose content | `champion-router` > `content-specialist` > `voice-guardian` |
+| Feedback on content | `champion-router` > `feedback` skill (auto-updates voice profile) |
 
 **Every content workflow** must read `agents/shared-instructions.md` and the champion's `tone-of-voice.md` before generating.
+
+**After every content generation**, watch for feedback and auto-trigger the `feedback` skill to update the champion's voice profile. This is what makes the agent learn over time.
 
 ## Architecture
 

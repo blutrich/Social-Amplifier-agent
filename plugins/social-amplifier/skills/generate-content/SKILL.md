@@ -73,10 +73,21 @@ If variation scores 9+: approved, present to user.
 
 Show all approved variations to the user. Ask which one they want to use (or if they want edits).
 
-### Step 6: Log
+### Step 6: Feedback Loop (AUTOMATIC)
+
+After presenting results, watch for ANY feedback from the user:
+
+- **Negative feedback** ("too formal", "sounds like AI", "I'd never say that") → Trigger the `feedback` skill to update tone-of-voice.md and rules.md. Then offer to regenerate.
+- **Positive feedback** ("this is perfect", "nailed it", "yes, more like this") → Trigger the `feedback` skill to record what worked. This is equally important.
+- **Manual edits** (user rewrites part of the post) → Compare their version to the original, extract the style differences, trigger `feedback` skill to learn from the diff.
+- **Variation preference** (user consistently picks Variation A over C) → Log the preference pattern.
+
+This feedback loop is what makes the agent get better over time. Every interaction teaches it.
+
+### Step 7: Log
 
 Save the chosen variation (or all if user wants them) to content history:
 ```
 Write(file_path="champions/{champion_id}/content-history/YYYY-MM-DD-{topic-slug}.md",
-      content="---\ndate: YYYY-MM-DD\nplatform: {platform}\ntopic: {topic}\nchosen: {A/B/C}\nscore: {guardian_score}\n---\n\n{post content}")
+      content="---\ndate: YYYY-MM-DD\nplatform: {platform}\ntopic: {topic}\nchosen: {A/B/C}\nscore: {guardian_score}\nfeedback: {any feedback given}\n---\n\n{post content}")
 ```

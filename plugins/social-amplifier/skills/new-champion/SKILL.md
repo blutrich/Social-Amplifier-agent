@@ -93,14 +93,16 @@ Read the inspiration analysis + writing samples analysis.
 Synthesize into a voice guide that captures THIS person's style.
 ```
 
-The tone-of-voice.md must include:
-- **Voice in one sentence** - e.g., "A frontend dev who gets excited about clean UX and explains complex things simply"
-- **Sentence patterns** - typical lengths, structures
-- **Vocabulary** - words they actually use, words they avoid
-- **Energy** - their natural energy level
-- **Humor** - how and when they use humor
-- **Topics** - what they write about and their angle on it
-- **The {Name} Test** - "Would {Name} copy-paste this and hit post without editing?"
+The tone-of-voice.md must include these sections (used as stable anchors for the feedback skill):
+- **## Voice Summary** - One sentence, e.g., "A frontend dev who gets excited about clean UX and explains complex things simply"
+- **## Tone** - Formal/casual/conversational, energy level
+- **## Sentence Patterns** - typical lengths, structures
+- **## Vocabulary** - words they actually use, words they avoid
+- **## Humor** - how and when they use humor
+- **## Topics** - what they write about and their angle on it
+- **## What Works** - (empty initially, populated by feedback skill when posts are approved)
+- **## Style References** - links to inspirations and their analyzed patterns
+- **## The {Name} Test** - "Would {Name} copy-paste this and hit post without editing?"
 
 ## Output Files
 
@@ -145,6 +147,12 @@ Write these files:
 - Base44 press release tone
 - Generic motivational content
 - Emojis as bullet points
+
+## Avoid
+(populated automatically by feedback - specific words, phrases, patterns this champion doesn't like)
+
+## Do More Of
+(populated automatically by feedback - patterns and styles that work well for this champion)
 
 ## Platform-Specific
 - LinkedIn: {their preferred LinkedIn style}
