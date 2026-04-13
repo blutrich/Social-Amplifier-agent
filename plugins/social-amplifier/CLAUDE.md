@@ -21,6 +21,7 @@ The `champion-router` skill is the entry point. When loaded:
 | Scan trends | `champion-router` > `trend-scout` |
 | Scan Slack | `champion-router` > `scan-slack` skill |
 | Repurpose content | `champion-router` > `content-specialist` > `voice-guardian` |
+| Discover subjects | `champion-router` > `discover-subjects` (OctoLens-powered, returns scored top 5) |
 | Deliver to champion | `champion-router` > `deliver-content` (Slack DM via Slack MCP) |
 | Process reply | `champion-router` > `deliver-content` (parses reply) > `feedback` skill |
 | Feedback on content | `champion-router` > `feedback` skill (auto-updates voice profile) |
