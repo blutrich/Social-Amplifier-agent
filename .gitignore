@@ -2,3 +2,17 @@
 node_modules/
 .env
 *.log
+
+# Champion profiles contain personal data - never commit
+# Operators build their own local profiles via /new-champion
+plugins/social-amplifier/champions/*
+!plugins/social-amplifier/champions/.gitkeep
+
+# Test workspaces (eval runs, benchmark outputs)
+plugins/social-amplifier-workspace/
+
+# Local CC10x state
+.claude/cc10x/
+
+# Personal planning docs
+docs/plans/*-backend-design.md
