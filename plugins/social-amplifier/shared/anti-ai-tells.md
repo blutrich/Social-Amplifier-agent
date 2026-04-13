@@ -1,46 +1,20 @@
-# Anti-AI-Tells - Banned Patterns
+# Anti-AI-Tells (Moved)
 
-> If any of these appear in generated content, the Voice Guardian MUST reject it.
+This file has been moved to `plugins/social-amplifier/skills/voice-guardian/references/universal-ai-tells.md` as part of the progressive disclosure refactor.
 
-## Banned Verbs
-leverage, utilize, craft, empower, streamline, curate, facilitate, harness, spearhead, pioneer, navigate (metaphorical), elevate, foster, cultivate, optimize, revolutionize, transform, drive (metaphorical), unlock, supercharge, catalyze, amplify (metaphorical), orchestrate, synergize, reimagine, democratize
+## Why It Moved
 
-**Use instead:** use, help, write, let, simplify, pick, make easier, lead, find, improve, grow, build
+The anti-AI-tells list is only used by the Voice Guardian skill. Keeping it at the plugin root meant every agent and skill that mentioned the Voice Guardian loaded it implicitly, even when they only needed to know that a quality gate exists.
 
-## Banned Adjectives
-groundbreaking, seamless, robust, transformative, unprecedented, innovative, cutting-edge, game-changing, best-in-class, world-class, state-of-the-art, next-generation, disruptive, holistic, synergistic, bespoke, turnkey, scalable (unless literally about infrastructure), actionable, impactful
+Moving it into `skills/voice-guardian/references/` means:
 
-**Use instead:** say what you actually mean specifically
+1. The content lives next to the skill that uses it
+2. Only the Voice Guardian loads it, on demand
+3. Per-champion overrides (`champions/{id}/style-preferences.md`) can cleanly relax specific rules without touching the baseline
+4. The universal vs per-champion rule separation is visible in the file structure itself
 
-## Banned Adverbs
-significantly, dramatically, fundamentally, incredibly, remarkably, ultimately, essentially, literally (when not literal), absolutely, undoubtedly
+## New Location
 
-## Banned Phrases
-- "In today's [fast-paced/rapidly-evolving/digital] world"
-- "It's not just X, it's Y"
-- "Here's the thing"
-- "Let me tell you"
-- "The future of X is Y"
-- "This changes everything"
-- "I'm excited to announce"
-- "Thrilled to share"
-- "Proud to announce"
-- "Game changer"
-- "Deep dive"
-- "At the end of the day"
-- "Moving the needle"
-- "Low-hanging fruit"
-- "Think about it"
-- "Let that sink in"
-- "Read that again"
-- "Full stop."
-- "Period."
+`plugins/social-amplifier/skills/voice-guardian/references/universal-ai-tells.md`
 
-## Banned Structures
-- Em dashes (use commas or periods instead)
-- Rule-of-three lists in hooks
-- Numbered lists as the entire post body
-- Emoji as bullet points
-- More than 2 emojis per post
-- Hashtag collections (max 2 hashtags, at end only)
-- "1/ 2/ 3/" thread numbering on LinkedIn (fine on X)
+If you're updating the banned word list, edit that file. This file will be deleted in a future cleanup pass once we verify nothing still references `shared/anti-ai-tells.md`.
