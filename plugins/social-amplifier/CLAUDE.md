@@ -21,6 +21,8 @@ The `champion-router` skill is the entry point. When loaded:
 | Scan trends | `champion-router` > `trend-scout` |
 | Scan Slack | `champion-router` > `scan-slack` skill |
 | Repurpose content | `champion-router` > `content-specialist` > `voice-guardian` |
+| Deliver to champion | `champion-router` > `deliver-content` (Slack DM via Slack MCP) |
+| Process reply | `champion-router` > `deliver-content` (parses reply) > `feedback` skill |
 | Feedback on content | `champion-router` > `feedback` skill (auto-updates voice profile) |
 
 **Every content workflow** must read `agents/shared-instructions.md` and the champion's `tone-of-voice.md` before generating.
