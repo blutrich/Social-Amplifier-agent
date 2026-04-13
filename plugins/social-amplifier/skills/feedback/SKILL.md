@@ -5,7 +5,7 @@ description: |
   Listens for corrections like "too formal", "I'd never say that", "more like my other posts".
   Updates tone-of-voice.md and rules.md in real-time.
 
-  Triggers on: too formal, too casual, not my style, I'd never say, sounds like AI, more like, less like, wrong tone, fix my voice, update my tone.
+  Triggers on: too formal, too casual, not my style, I'd never say, sounds like AI, more like, less like, wrong tone, fix my voice, update my tone, add inspiration, follow like, write like, inspired by.
   Also activates automatically after any content generation when the user gives feedback.
 ---
 
@@ -36,6 +36,39 @@ Determine what type of feedback was given:
 | **Topic refinement** | "I don't write about that", "add AI ethics to my topics" | profile.json → topics[] |
 | **Positive reinforcement** | "this is great", "perfect tone", "more like this" | rules.md → add to "what works" list |
 | **Style reference** | "more like [person]", "write like my last post" | tone-of-voice.md → Style References |
+| **Inspiration request** | "add Mike Krieger as inspiration", "follow like Harry Dry", "inspired by @pieterlevels", "write like lenny rachitsky" | inspirations.md → add person + trigger match-inspirations skill to pull their content |
+
+### Inspiration Request Sub-Process
+
+When a champion asks for a specific inspiration, run this flow:
+
+1. **Parse the name/handle from the message.** Handle variations: "Mike Krieger", "@mikeyk", "mike krieger from instagram", "the anthropic CPO". Use context clues.
+
+2. **Check banned list first.** Load `plugins/social-amplifier/shared/inspiration-seeds.json` and verify the requested person is NOT in the `banned.people` list and NOT affiliated with any company in `banned.company_patterns`.
+
+   - If banned: reply to champion with a specific refusal. Example: "I can't use Amjad Masad as an inspiration — he's the CEO of Replit, a direct competitor. Want me to suggest some alternatives in the same space?"
+   - If on a banned company but might be individually OK (engineer vs CEO), ask the operator via memory marker before adding.
+
+3. **Resolve to a social profile.** If the champion gave a name, use:
+   - Bright Data `scrape_as_markdown` on `https://www.linkedin.com/in/{handle}` if they provided a LinkedIn handle
+   - OctoLens `list_mentions` with author filter if they gave a general name
+   - Google search via WebSearch if nothing else resolves
+
+4. **Analyze the person's content.** Pull 5-10 of their recent posts via Bright Data. Extract voice patterns (sentence length, vocabulary, humor, structure) using the same 8-dimension analysis from `new-champion/references/auto-profile-from-slack.md`.
+
+5. **Add to the champion's inspirations.md.** Use the format documented in `match-inspirations/references/inspirations-schema.md`. Include:
+   - Name, handle(s)
+   - Voice signature (2-3 sentence summary)
+   - 2-3 verbatim sample posts
+   - Why the champion requested them (their own words)
+   - Date added
+
+6. **Update tone-of-voice.md "Style References" section.** Add a pointer to the new inspiration so the Voice Guardian loads their patterns during scoring.
+
+7. **Confirm to the champion.** Short DM reply:
+   > "Added {person_name} as inspiration. Your next drafts will pick up their style patterns — {1-2 specific patterns observed}. Let me know if that shifts the voice in the direction you wanted."
+
+8. **Do NOT regenerate old content.** The new inspiration applies to future generations only. Re-scoring or re-writing past content is noisy and confusing.
 
 ### Step 2: Read Current Profile
 

@@ -1,0 +1,325 @@
+{
+  "_meta": {
+    "version": 2,
+    "updated_at": "2026-04-13",
+    "updated_by": "ofer-blutrich",
+    "description": "Curated persona-to-inspiration seed list for the Social Amplifier plugin. Used as Signal 1 of the 5-signal matching algorithm in the match-inspirations skill. Edit manually as the landscape shifts."
+  },
+  "always_include": {
+    "anthropic_team": {
+      "description": "Anthropic team members are always included as inspiration for relevant personas. Anthropic is the foundation model Base44 is built on, and their public voices carry weight for builders working in the AI space.",
+      "people": [
+        {
+          "name": "Mike Krieger",
+          "role": "CPO",
+          "linkedin": "mikeyk",
+          "twitter": "mikeyk",
+          "personas": ["product", "founder", "builder_indie"],
+          "why": "Instagram co-founder, now Anthropic CPO. Product-led thinking with a builder mindset."
+        },
+        {
+          "name": "Jack Clark",
+          "role": "Co-founder, Policy",
+          "twitter": "jackclarkSF",
+          "personas": ["comms", "marketing", "founder"],
+          "why": "Writes Import AI newsletter — long-running, measured policy and industry analysis. Gold standard for AI comms voice."
+        },
+        {
+          "name": "Alex Albert",
+          "role": "Developer Relations",
+          "twitter": "alexalbert__",
+          "linkedin": "alexalbert",
+          "personas": ["dev", "product", "builder_indie"],
+          "why": "Very active, builder-facing Anthropic voice. Ships demos, shares examples, reliable for dev signal."
+        },
+        {
+          "name": "Karina Nguyen",
+          "role": "Research / Product",
+          "twitter": "karinanguyen_",
+          "personas": ["dev", "product", "builder_indie"],
+          "why": "Active technical Twitter, product + research intersection, builder-friendly explanations."
+        },
+        {
+          "name": "Amanda Askell",
+          "role": "Research (Ethics)",
+          "twitter": "AmandaAskell",
+          "personas": ["comms", "product"],
+          "why": "Thoughtful alignment and ethics voice, measured, academic-adjacent but accessible."
+        },
+        {
+          "name": "Dario Amodei",
+          "role": "CEO",
+          "twitter": "DarioAmodei",
+          "personas": ["founder"],
+          "why": "Anthropic founder voice. Occasional posting but every post carries weight."
+        },
+        {
+          "name": "Sam Bowman",
+          "role": "Research",
+          "twitter": "sleepinyourhat",
+          "personas": ["dev", "product"],
+          "why": "Research Twitter, safety + alignment, technical depth accessible to builders."
+        }
+      ],
+      "rule": "When matching inspirations for a champion, always include the Anthropic team members whose personas list contains the champion's persona. These are added as TIER-1 inspirations alongside the curated persona seeds — not replacing them."
+    }
+  },
+  "banned": {
+    "reason": "Direct competitor CEOs and marketing leads. Never use as inspiration sources for Base44 champions — their voice leaking into champion content creates brand conflicts.",
+    "people": [
+      {
+        "name": "Amjad Masad",
+        "role": "CEO",
+        "company": "Replit",
+        "linkedin": "amjadmasad",
+        "twitter": "amasad",
+        "banned_reason": "Direct competitor CEO"
+      },
+      {
+        "name": "Anton Osika",
+        "role": "CEO",
+        "company": "Lovable",
+        "linkedin": "antonosika",
+        "twitter": "antonosika",
+        "banned_reason": "Direct competitor CEO"
+      },
+      {
+        "name": "Eric Simons",
+        "role": "CEO",
+        "company": "Bolt / StackBlitz",
+        "linkedin": "ericsimons",
+        "twitter": "ericsimons40",
+        "banned_reason": "Direct competitor CEO"
+      },
+      {
+        "name": "Albert Pai",
+        "role": "Co-founder",
+        "company": "Bolt / StackBlitz",
+        "linkedin": "albertpai",
+        "banned_reason": "Direct competitor co-founder"
+      }
+    ],
+    "company_patterns": [
+      "Replit",
+      "Lovable",
+      "Bolt",
+      "StackBlitz",
+      "v0 (Vercel product team)",
+      "Cursor",
+      "Windsurf"
+    ],
+    "company_ban_scope": "CEOs, marketing leads, and head-of-comms at listed companies are banned. Individual engineers or designers at these companies writing about general industry topics are acceptable case-by-case but must be reviewed by operator before adding."
+  },
+  "personas": {
+    "comms": {
+      "description": "Comms / PR / brand voice leaders — for champions like Dor",
+      "inspirations": [
+        {
+          "name": "Dennis Mortensen",
+          "linkedin": "dennismortensen",
+          "twitter": "dennismortensen",
+          "why": "AI company comms at scale, bilingual humor, story-first posts"
+        },
+        {
+          "name": "Julie Zhuo",
+          "linkedin": "juliezhuo",
+          "twitter": "joulee",
+          "why": "Design leadership voice, thoughtful long-form, first-person stories"
+        },
+        {
+          "name": "Emily Sundberg",
+          "linkedin": "emilysundberg",
+          "twitter": "emilysundberg",
+          "why": "Newsletter-style observational voice, specific references, media-industry savvy"
+        },
+        {
+          "name": "Anshu Sharma",
+          "linkedin": "anshusharma",
+          "why": "Enterprise AI comms, measured thought leadership"
+        },
+        {
+          "name": "Ed Zitron",
+          "twitter": "edzitron",
+          "why": "Contrarian tech comms, specific, opinionated — use carefully"
+        },
+        {
+          "name": "Rand Fishkin",
+          "linkedin": "randfishkin",
+          "twitter": "randfish",
+          "why": "Honest marketing/comms leadership, transparent about mistakes"
+        }
+      ]
+    },
+    "dev": {
+      "description": "Developer / engineering voices — builder perspective on tools and systems",
+      "inspirations": [
+        {
+          "name": "Kelsey Hightower",
+          "linkedin": "kelseyhightower",
+          "twitter": "kelseyhightower",
+          "why": "Short, sharp, deep technical insights in plain language"
+        },
+        {
+          "name": "Dan Abramov",
+          "twitter": "dan_abramov",
+          "why": "Thoughtful explanations of complex things, honest about trade-offs"
+        },
+        {
+          "name": "Swyx",
+          "twitter": "swyx",
+          "why": "AI engineering voice, prolific, bilingual-style code-switching"
+        },
+        {
+          "name": "Cassidy Williams",
+          "linkedin": "cassidoo",
+          "twitter": "cassidoo",
+          "why": "Warm technical voice, humor, short-form developer content"
+        },
+        {
+          "name": "Simon Willison",
+          "twitter": "simonw",
+          "why": "Ship-in-public builder voice, daily updates, technical specificity"
+        }
+      ]
+    },
+    "product": {
+      "description": "Product managers and product-led thinkers",
+      "inspirations": [
+        {
+          "name": "Lenny Rachitsky",
+          "linkedin": "lennyrachitsky",
+          "twitter": "lennysan",
+          "why": "PM thought leadership, frameworks with examples, story-driven"
+        },
+        {
+          "name": "Shishir Mehrotra",
+          "linkedin": "shishirmehrotra",
+          "why": "Product leadership, writes about building teams and tools"
+        },
+        {
+          "name": "Julie Zhuo",
+          "linkedin": "juliezhuo",
+          "twitter": "joulee",
+          "why": "Product-design intersection, thoughtful long-form"
+        },
+        {
+          "name": "Jason Fried",
+          "linkedin": "jasonfried",
+          "twitter": "jasonfried",
+          "why": "Opinionated product philosophy, short posts, strong positions"
+        }
+      ]
+    },
+    "marketing": {
+      "description": "Marketing, growth, and builder-marketing intersection",
+      "inspirations": [
+        {
+          "name": "Aakash Gupta",
+          "linkedin": "aakashgupta",
+          "twitter": "aakashgupta",
+          "why": "Contrarian startup takes, specific data, writes like a PM who thinks in market frames"
+        },
+        {
+          "name": "April Dunford",
+          "linkedin": "aprildunford",
+          "twitter": "aprildunford",
+          "why": "Positioning and B2B marketing with story-driven examples"
+        },
+        {
+          "name": "Harry Dry",
+          "linkedin": "harrydry",
+          "twitter": "harrydry",
+          "why": "Marketing Examples: specific brand studies, short posts, no fluff"
+        },
+        {
+          "name": "Emily Kramer",
+          "linkedin": "emilykramer",
+          "twitter": "thiskramer",
+          "why": "MKT1 newsletter, builder-marketing intersection, operational marketing"
+        },
+        {
+          "name": "Amanda Natividad",
+          "linkedin": "amandanatividad",
+          "twitter": "amandanat",
+          "why": "Zero-click content, creator marketing, measured analytical voice"
+        }
+      ]
+    },
+    "founder": {
+      "description": "Founders and executives building in public",
+      "inspirations": [
+        {
+          "name": "Maor Shlomo",
+          "linkedin": "maorshlomo",
+          "twitter": "maorshlomo",
+          "why": "Internal — Base44 founder voice. Aspirational for champions to align with Base44 brand"
+        },
+        {
+          "name": "Paul Graham",
+          "twitter": "paulg",
+          "why": "Essay-style founder thinking, long-form insight, controversial takes"
+        },
+        {
+          "name": "Jason Fried",
+          "linkedin": "jasonfried",
+          "twitter": "jasonfried",
+          "why": "Opinionated founder voice, short posts, strong positions"
+        },
+        {
+          "name": "Naval Ravikant",
+          "twitter": "naval",
+          "why": "Aphoristic, high-insight-density, quote-able"
+        }
+      ]
+    },
+    "builder_indie": {
+      "description": "Solo builders, indie hackers, ship-in-public founders",
+      "inspirations": [
+        {
+          "name": "Pieter Levels",
+          "twitter": "levelsio",
+          "why": "Raw ship-in-public voice, real numbers, zero corporate polish, specific projects"
+        },
+        {
+          "name": "Marc Lou",
+          "twitter": "marc_louvion",
+          "linkedin": "marclouvion",
+          "why": "Indie hacker revenue transparency, short posts, builder authenticity"
+        },
+        {
+          "name": "Tony Dinh",
+          "twitter": "tdinh_me",
+          "why": "Indie hacker journey, ship-in-public, specific revenue numbers"
+        },
+        {
+          "name": "Justin Welsh",
+          "linkedin": "justinwelsh",
+          "twitter": "thejustinwelsh",
+          "why": "Solopreneur brand-building, systems, consistent posting"
+        }
+      ]
+    },
+    "ops": {
+      "description": "Operations, infrastructure, scaling",
+      "inspirations": [
+        {
+          "name": "Charity Majors",
+          "twitter": "mipsytipsy",
+          "why": "Observability and operations voice, opinionated, experienced"
+        },
+        {
+          "name": "Camille Fournier",
+          "linkedin": "camillefournier",
+          "twitter": "skamille",
+          "why": "Engineering leadership and scaling, thoughtful management insights"
+        },
+        {
+          "name": "Will Larson",
+          "linkedin": "will-larson",
+          "twitter": "Lethain",
+          "why": "Engineering strategy, long-form analytical writing"
+        }
+      ]
+    }
+  }
+}
