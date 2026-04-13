@@ -25,6 +25,7 @@ All files must exist before the champion is considered fully onboarded. The `con
   "name": "{Full Name from Slack}",
   "champion_id": "{kebab-case-of-name}",
   "slack_user_id": "{U0XXXXXXX}",
+  "dm_channel_id": "{D0XXXXX or null if not cached yet}",
   "email": "{email from Slack profile}",
   "role": "{role derived from Slack title or operator input}",
   "team": "{team derived from Slack title}",
@@ -32,11 +33,14 @@ All files must exist before the champion is considered fully onboarded. The `con
   "topics": ["{topic1}", "{topic2}", "{topic3}"],
   "platforms": ["linkedin", "x"],
   "timezone": "{from Slack profile, e.g., Asia/Jerusalem}",
+  "delivery_days": ["mon", "tue", "wed", "thu", "fri"],
+  "delivery_time_local": "09:00",
   "uses_hebrew": {true|false},
   "created_at": "{YYYY-MM-DD}",
   "updated_at": "{YYYY-MM-DD}",
   "version": 1,
   "status": "{active | auto_with_defaults | paused | archived}",
+  "paused_until": "{YYYY-MM-DD or null}",
   "profile_source": {
     "slack_analyzed": true,
     "octolens_analyzed": {true|false},
@@ -45,6 +49,13 @@ All files must exist before the champion is considered fully onboarded. The `con
   }
 }
 ```
+
+### Delivery Scheduling Fields
+
+- **delivery_days**: Array of lowercase 3-letter day codes. Default `["mon","tue","wed","thu","fri"]` (weekdays only). Champions who want weekend posts can set to include `"sat"` or `"sun"`. Champions who want only specific days can narrow (e.g., `["mon","wed","fri"]`).
+- **delivery_time_local**: 24-hour time string in champion's local timezone. Default `"09:00"`. The deliver-content skill converts this to UTC using the `timezone` field before scheduling.
+- **dm_channel_id**: Cached Slack DM channel ID from the first successful delivery. `null` until the deliver-content skill resolves it for the first time, then populated so future deliveries skip the lookup.
+- **paused_until**: ISO date string. When set, `status` is `paused` and delivery resumes automatically on this date. Null otherwise.
 
 ### Field Definitions
 

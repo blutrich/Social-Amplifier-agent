@@ -33,8 +33,8 @@ Before attempting to deliver, check:
 - `champion_id` exists as a directory in `plugins/social-amplifier/champions/`
 - `profile.json` has `status: active` (not `paused`, `archived`, or missing)
 - `profile.json` has a valid `slack_user_id` or `dm_channel`
-- The content to deliver has passed Voice Guardian with at least one draft scoring 9+/10 (drafts below 7 should have been rejected upstream)
-- The current date is a valid delivery day (not weekend-only if the champion opted out of weekends)
+- At least one of the drafts to deliver has a Voice Guardian verdict of `APPROVED` with score 9+/10. Drafts scoring 7-8 should have been auto-rewritten by Voice Guardian upstream before reaching this skill — if any draft with a 7-8 score arrives here, that's a bug in the upstream flow, log it and skip that draft.
+- The current date is a valid delivery day per `profile.json.delivery_days` (default `["mon","tue","wed","thu","fri"]` — weekdays only). If the champion has `delivery_days: ["mon","wed","fri"]` they only get MWF deliveries. If they have `delivery_days: []` or the field is missing, use the default weekdays-only.
 
 If any check fails, log the reason and stop. Don't attempt partial delivery.
 

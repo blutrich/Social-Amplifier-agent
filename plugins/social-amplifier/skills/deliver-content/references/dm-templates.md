@@ -12,26 +12,26 @@ The actual text formats used when sending draft posts to champions via Slack DM.
 
 ---
 
-## Template 1: Daily Digest (3 Variations)
+## Template 1: Daily Digest (2-3 Variations)
 
 Used for the standard morning delivery when multiple content angles were generated. Most common template.
 
 ```
-Good morning {first_name}! Here are today's 3 drafts:
+Good morning {first_name}! Here are today's {variation_count} drafts:
 
-*Option 1 — Personal experience angle*
+*Option 1 — {angle_label_1}*
 
 {variation_1_text_with_no_markdown}
 
 ---
 
-*Option 2 — Industry insight angle*
+*Option 2 — {angle_label_2}*
 
 {variation_2_text_with_no_markdown}
 
 ---
 
-*Option 3 — Product/feature angle*
+*Option 3 — {angle_label_3}*
 
 {variation_3_text_with_no_markdown}
 
@@ -43,6 +43,11 @@ Reply *"not my style"* + feedback to help me learn your voice — I'll update yo
 
 Or just copy whichever you like and post it. Silence is fine too.
 ```
+
+**Variables:**
+- `{variation_count}` is `2` or `3` based on how many the Voice Guardian approved
+- `{angle_label_1/2/3}` comes from the content-specialist's output per variation. Common labels: "Personal experience angle", "Industry insight angle", "Product/feature angle", "Voice Guardian technical angle", "Hot take", "Behind-the-scenes", "Customer story". Use whatever label the content-specialist tagged each variation with — do NOT hardcode defaults.
+- If only 2 variations approved, drop the third block entirely (don't leave an empty Option 3).
 
 **Slack formatting notes:**
 - `*text*` is bold in Slack
@@ -199,6 +204,8 @@ All templates use these variables, populated at send time:
 
 - `{first_name}` — from `champions/{id}/profile.json`.name, first word only
 - `{operator_name}` — who ran `/new-champion` for this person
-- `{variation_1_text}`, etc. — clean post text from generate-content, no markdown
+- `{variation_count}` — integer, 2 or 3, based on approved drafts
+- `{variation_1_text}`, `{variation_2_text}`, `{variation_3_text}` — clean post text from generate-content, no markdown
+- `{angle_label_1}`, `{angle_label_2}`, `{angle_label_3}` — human-readable angle label per variation (from content-specialist output, never hardcoded)
 - `{frequency}` — human-readable delivery cadence from operator config
 - `{date}` — human-readable resume date for pause messages

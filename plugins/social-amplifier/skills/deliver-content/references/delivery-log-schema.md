@@ -12,8 +12,13 @@ plugins/social-amplifier/champions/{champion_id}/content-history/{YYYY-MM-DD}-{t
 
 **Filename rules:**
 - Date is delivery date in the champion's local timezone (not UTC)
-- Topic slug is kebab-case, max 30 chars, from the primary topic or "daily-digest" if no specific topic
+- Topic slug is kebab-case, max 30 chars, determined by these rules in order:
+  1. **Single-topic batch:** All variations cover the same topic → use that topic, slugified
+  2. **Multi-topic batch (different angles on same subject):** Use the subject line or primary entity (e.g., "anthropic-ship-button" for 3 drafts responding to the Anthropic launch)
+  3. **Mixed-topic batch (unrelated drafts):** Use `"daily-digest"` (the literal string)
+  4. **Retry after rejection:** Use the original topic slug with `-retry` suffix
 - Multiple deliveries per day use suffix: `2026-04-13-daily-digest-01.md`, `2026-04-13-retry-02.md`
+- **Dry-run deliveries:** Use prefix `DRYRUN-` instead of the date: `DRYRUN-2026-04-13-daily-digest.md`. Dry-run logs are written to the same `content-history/` directory so they're discoverable alongside real deliveries, but the prefix prevents them from being counted in delivery metrics.
 
 ## Full Schema
 
@@ -26,7 +31,7 @@ date: {YYYY-MM-DD}
 delivered_at: {ISO 8601 timestamp with timezone}
 dm_channel: {D0XXXXXX}
 template: {daily-digest | single-draft | welcome | revision | pause | apology}
-trigger: {scheduled | manual | retry | onboarding}
+trigger: {scheduled | manual | retry | onboarding | dry-run}
 trigger_id: {scheduled pipeline run ID or operator user ID}
 variations_delivered: {1 | 2 | 3}
 topic: {primary topic of the batch}
