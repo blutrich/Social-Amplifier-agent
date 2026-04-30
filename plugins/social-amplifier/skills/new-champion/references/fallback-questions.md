@@ -12,7 +12,7 @@ Ask questions only when auto-profiling fails to produce actionable data. The thr
 
 2. **Role is ambiguous from Slack title.** Some titles are cryptic (e.g., "Chief Vibe Officer", "Builder", or just an emoji). The operator should disambiguate.
 
-3. **Topics can't be inferred from channel membership.** Champion is in very few channels, or their channels don't map cleanly to a persona (dev/marketing/comms/ops).
+3. **Topics can't be inferred from channel membership.** Champion is in very few channels, or their channels don't map cleanly to a persona (dev/marketing/comms/ops/sales).
 
 ## The Minimum Viable Question Set
 
@@ -29,6 +29,7 @@ These are the ONLY questions worth asking. Never add more without removing an ex
 4. Marketing — competitor moves, growth tactics, content trends
 5. Founder / Exec — strategic moves, wins to amplify, high-reach content
 6. Ops — scaling stories, infrastructure, process
+7. Sales / AE / SE — customer wins, competitive intel, use-case stories, ROI proof
 
 Just reply with a number."
 ```
@@ -147,6 +148,7 @@ The skill sends Dan one DM:
 > 4. Marketing
 > 5. Founder / Exec
 > 6. Ops
+> 7. Sales / AE / SE
 >
 > Reply with a number (or "no thanks" to opt out). First posts coming tomorrow morning.
 

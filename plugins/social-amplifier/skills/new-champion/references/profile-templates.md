@@ -29,7 +29,7 @@ All files must exist before the champion is considered fully onboarded. The `con
   "email": "{email from Slack profile}",
   "role": "{role derived from Slack title or operator input}",
   "team": "{team derived from Slack title}",
-  "persona": "{comms | dev | product | marketing | founder | ops}",
+  "persona": "{comms | dev | product | marketing | founder | ops | sales}",
   "topics": ["{topic1}", "{topic2}", "{topic3}"],
   "platforms": ["linkedin", "x"],
   "timezone": "{from Slack profile, e.g., Asia/Jerusalem}",

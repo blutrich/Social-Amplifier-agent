@@ -57,6 +57,7 @@ Pull fresh OctoLens mentions mapped to the champion's persona:
 | founder | 20511 (Positive) + high-reach | engagement top 10% |
 | builder_indie | 20499 (Industry insights) + own_brand_mention | last 72h |
 | ops | industry_insights + bug_report tag | last 7d |
+| sales | 20498 (Competitor intelligence) + 20497 (Buy intent) | customer_win, roi_story, use_case tags |
 
 Pull 20-40 recent mentions per view. Filter to last 24-72 hours. Apply persona-specific tag filters.
 
@@ -73,7 +74,7 @@ Apply filters in order:
 1. **Topic match:** Keep only mentions that plausibly match the champion's `topics[]`. Use substring/keyword matching against mention title + body.
 2. **Recency:** Drop anything older than 72 hours (or 7 days for ops persona)
 3. **Already covered:** Drop any subject whose topic matches a delivery from the last 30 days
-4. **Sentiment fit:** For comms persona, prefer negative + brand-monitoring mentions (crisis response). For marketing, prefer competitor mentions. For dev/product, prefer user feedback and technical discussions.
+4. **Sentiment fit:** For comms persona, prefer negative + brand-monitoring mentions (crisis response). For marketing, prefer competitor mentions. For dev/product, prefer user feedback and technical discussions. For sales, prefer customer wins, ROI proof points, and competitive differentiators.
 5. **Language match:** Drop non-English mentions unless the champion's profile.json.platforms includes Hebrew/other languages
 
 After filtering, you should have 10-30 candidate subjects. If you have fewer than 3, widen the time window and retry. If you have zero, return an honest "no strong subjects today" result.

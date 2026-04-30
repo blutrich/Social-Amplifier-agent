@@ -320,6 +320,29 @@
           "why": "Engineering strategy, long-form analytical writing"
         }
       ]
+    },
+    "sales": {
+      "description": "Sales / AE / SE — customer wins, competitive intel, use-case stories, ROI proof",
+      "inspirations": [
+        {
+          "name": "Jill Rowley",
+          "linkedin": "jillrowley",
+          "twitter": "jill_rowley",
+          "why": "Social selling pioneer, practical advice for modern B2B sales reps"
+        },
+        {
+          "name": "Chris Orlob",
+          "linkedin": "chrisorlob",
+          "twitter": "chrisorlob",
+          "why": "Sales leadership and win/loss analysis, high-signal tactical content"
+        },
+        {
+          "name": "Nate Nasralla",
+          "linkedin": "natenasralla",
+          "twitter": "natenasralla",
+          "why": "Champion-based selling, writing deals not just talking them — relevant to SEs and AEs"
+        }
+      ]
     }
   }
 }

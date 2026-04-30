@@ -171,6 +171,7 @@ Different champions favor different angles. Look at the champion's content histo
 | Founder (Maor) | Numbers/milestones > Personal experience > Echo | Long industry analysis |
 | Dev/Engineer | Personal experience > Reflection > Echo | Marketing announcement |
 | Marketing | Echo response > Industry insight > Personal experience | Pure technical detail |
+| Sales / AE / SE | Customer story > Echo response > Personal experience | Abstract theory, internal jargon |
 
 If the champion's content history shows 80% personal experience posts and 20% reflection, lean heavier on personal experience for the new variations.
 
